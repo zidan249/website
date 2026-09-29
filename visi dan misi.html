@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visi & Misi - SMK MHI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f4f8f5;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #0b6b3a;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd54f;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(11, 107, 58, 0.85),
+                    rgba(11, 107, 58, 0.85)
+                ),
+                linear-gradient(135deg, #0b6b3a, #22a060);
+
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+        }
+
+        /* CONTAINER */
+        .container {
+            width: 85%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* VISI */
+        .visi-section {
+            padding: 70px 0;
+        }
+
+        .judul {
+            text-align: center;
+            color: #0b6b3a;
+            font-size: 34px;
+            margin-bottom: 40px;
+        }
+
+        .visi-card {
+            background: white;
+            padding: 45px;
+            border-radius: 15px;
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+            border-top: 6px solid #0b6b3a;
+        }
+
+        .visi-icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .visi-card h2 {
+            color: #0b6b3a;
+            margin-bottom: 20px;
+        }
+
+        .visi-card p {
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        /* MISI */
+        .misi-section {
+            background: #e9f5ee;
+            padding: 70px 0;
+        }
+
+        .misi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .misi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+
+            transition: 0.3s;
+        }
+
+        .misi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .nomor {
+            min-width: 45px;
+            height: 45px;
+
+            background: #0b6b3a;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .misi-card h3 {
+            color: #0b6b3a;
+            margin-bottom: 8px;
+        }
+
+        .misi-card p {
+            line-height: 1.7;
+        }
+
+        /* TUJUAN */
+        .tujuan-section {
+            padding: 70px 0;
+        }
+
+        .tujuan-box {
+            background: #0b6b3a;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .tujuan-box h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .tujuan-box ul {
+            padding-left: 25px;
+        }
+
+        .tujuan-box li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #064b29;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .misi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .visi-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            
+        </div>
+
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Visi dan Misi</a></li>
+            <li><a href="#">Jurusan</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div>
+            <h1>Visi & Misi SMK MHI</h1>
+
+            <p>
+                Mewujudkan pendidikan kejuruan yang berkualitas
+                dan berkarakter.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- VISI -->
+    <section class="visi-section">
+
+        <div class="container">
+
+            <h2 class="judul">
+                Visi Sekolah
+            </h2>
+
+            <div class="visi-card">
+
+                <div class="visi-icon">
+                    🎯
+                </div>
+
+                <h2>Visi SMK MHI</h2>
+
+                <p>
+                    "Menjadi Sekolah Menengah Kejuruan yang unggul,
+                    berkarakter, kompeten, mandiri, serta mampu
+                    menghasilkan lulusan yang siap menghadapi dunia
+                    kerja dan perkembangan teknologi."
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISI -->
+    <section class="misi-section">
+
+        <div class="container">
+
+            <h2 class="judul">
+                Misi Sekolah
+            </h2>
+
+            <div class="misi-grid">
+
+                <div class="misi-card">
+
+                    <div class="nomor">1</div>
+
+                    <div>
+                        <h3>
+                            Pendidikan Berkualitas
+                        </h3>
+
+                        <p>
+                            Menyelenggarakan proses pembelajaran yang
+                            efektif, inovatif, dan sesuai dengan
+                            perkembangan ilmu pengetahuan serta teknologi.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="misi-card">
+
+                    <div class="nomor">2</div>
+
+                    <div>
+                        <h3>
+                            Pengembangan Kompetensi
+                        </h3>
+
+                        <p>
+                            Meningkatkan kompetensi peserta didik sesuai
+                            dengan bidang keahlian dan kebutuhan dunia
+                            kerja.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="misi-card">
+
+                    <div class="nomor">3</div>
+
+                    <div>
+                        <h3>
+                            Pembentukan Karakter
+                        </h3>
+
+                        <p>
+                            Menanamkan sikap disiplin, tanggung jawab,
+                            jujur, kreatif, mandiri, dan berakhlak mulia.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="misi-card">
+
+                    <div class="nomor">4</div>
+
+                    <div>
+                        <h3>
+                            Penguasaan Teknologi
+                        </h3>
+
+                        <p>
+                            Mendorong peserta didik agar mampu memanfaatkan
+                            teknologi sebagai sarana pembelajaran dan
+                            pengembangan keterampilan.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="misi-card">
+
+                    <div class="nomor">5</div>
+
+                    <div>
+                        <h3>
+                            Kerja Sama Dunia Industri
+                        </h3>
+
+                        <p>
+                            Membangun kerja sama dengan dunia usaha dan
+                            dunia industri untuk meningkatkan pengalaman
+                            serta kesiapan kerja peserta didik.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="misi-card">
+
+                    <div class="nomor">6</div>
+
+                    <div>
+                        <h3>
+                            Prestasi Siswa
+                        </h3>
+
+                        <p>
+                            Mengembangkan potensi peserta didik dalam
+                            bidang akademik maupun nonakademik untuk
+                            mencapai prestasi terbaik.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TUJUAN -->
+    <section class="tujuan-section">
+
+        <div class="container">
+
+            <div class="tujuan-box">
+
+                <h2>
+                    Tujuan SMK MHI
+                </h2>
+
+                <ul>
+                    <li>
+                        Menghasilkan lulusan yang memiliki kompetensi
+                        sesuai bidang keahliannya.
+                    </li>
+
+                    <li>
+                        Membentuk peserta didik yang memiliki karakter
+                        disiplin, bertanggung jawab, dan mandiri.
+                    </li>
+
+                    <li>
+                        Mempersiapkan siswa agar mampu melanjutkan
+                        pendidikan ke jenjang yang lebih tinggi.
+                    </li>
+
+                    <li>
+                        Mempersiapkan lulusan untuk memasuki dunia kerja
+                        dan dunia industri.
+                    </li>
+
+                    <li>
+                        Mendorong siswa menjadi pribadi yang kreatif,
+                        inovatif, dan mampu berwirausaha.
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 SMK MHI. Semua Hak Dilindungi.
+        </p>
+
+    </footer>
+
+</body>
+</html>

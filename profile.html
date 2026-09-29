@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Sekolah - SMA Nusantara</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            background: #0d47a1;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffca28;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 500px;
+            background:
+                linear-gradient(rgba(13, 71, 161, 0.75), rgba(13, 71, 161, 0.75)),
+                linear-gradient(135deg, #1565c0, #42a5f5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffca28;
+            color: #222;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffc107;
+            transform: translateY(-2px);
+        }
+
+        /* ===== SECTION ===== */
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #0d47a1;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* ===== TENTANG ===== */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        /* ===== VISI MISI ===== */
+        .visi-misi {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #0d47a1;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+        }
+
+        /* ===== FASILITAS ===== */
+        .fasilitas {
+            background: #eef5ff;
+        }
+
+        .fasilitas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .fasilitas-card {
+            background: white;
+            text-align: center;
+            padding: 30px 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .fasilitas-card:hover {
+            transform: translateY(-5px);
+            background: #0d47a1;
+            color: white;
+        }
+
+        .fasilitas-card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .fasilitas-card h3 {
+            margin-bottom: 8px;
+        }
+
+        /* ===== GURU ===== */
+        .guru-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .guru-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .guru-photo {
+            height: 180px;
+            background: linear-gradient(135deg, #90caf9, #1565c0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 60px;
+        }
+
+        .guru-info {
+            padding: 20px;
+        }
+
+        .guru-info h3 {
+            color: #0d47a1;
+            margin-bottom: 5px;
+        }
+
+        /* ===== KONTAK ===== */
+        .contact {
+            background: #0d47a1;
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #062d6b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .fasilitas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guru-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .visi-misi,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .guru-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fasilitas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#visi dan misi">Visi & Misi</a></li>
+            <li><a href="#fasilitas">Fasilitas</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <h1>Selamat Datang di smk mulia hati insani</h1>
+
+            <p>
+                Mewujudkan generasi yang cerdas, berkarakter,
+                kreatif, dan berprestasi.
+            </p>
+
+            <a href="#tentang" class="btn">Kenali Sekolah Kami</a>
+        </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section class="about" id="tentang">
+        <h2 class="section-title">Tentang Sekolah</h2>
+
+        <div class="about-content">
+            <p>
+                SMk mhi merupakan sekolah menengah atas yang
+                berkomitmen memberikan pendidikan berkualitas bagi
+                generasi muda Indonesia.
+            </p>
+
+            <p>
+                Kami mengembangkan potensi peserta didik melalui
+                pembelajaran akademik, kegiatan ekstrakurikuler,
+                pengembangan karakter, serta pemanfaatan teknologi.
+            </p>
+        </div>
+    </section>
+
+    <!-- VISI MISI -->
+    <section id="visi">
+        <h2 class="section-title">Visi & Misi</h2>
+
+        <div class="visi-misi">
+
+            <div class="card">
+                <h3>🎯 Visi</h3>
+
+                <p>
+                    Menjadi sekolah unggulan yang menghasilkan peserta
+                    didik berprestasi, berkarakter, mandiri, kreatif,
+                    dan berwawasan global.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📚 Misi</h3>
+
+                <ul>
+                    <li>Menyelenggarakan pembelajaran yang berkualitas.</li>
+                    <li>Mengembangkan potensi dan bakat siswa.</li>
+                    <li>Menanamkan nilai karakter dan kedisiplinan.</li>
+                    <li>Mendorong pemanfaatan teknologi dalam pendidikan.</li>
+                    <li>Meningkatkan prestasi akademik dan nonakademik.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FASILITAS -->
+    <section class="fasilitas" id="fasilitas">
+        <h2 class="section-title">Fasilitas Sekolah</h2>
+
+        <div class="fasilitas-grid">
+
+            <div class="fasilitas-card">
+                <div class="icon">📖</div>
+                <h3>Perpustakaan</h3>
+                <p>Tempat belajar dengan berbagai koleksi buku.</p>
+            </div>
+
+            <div class="fasilitas-card">
+                <div class="icon">💻</div>
+                <h3>Laboratorium Komputer</h3>
+                <p>Fasilitas komputer untuk mendukung pembelajaran.</p>
+            </div>
+
+            <div class="fasilitas-card">
+                <div class="icon">⚽</div>
+                <h3>Lapangan Olahraga</h3>
+                <p>Area olahraga untuk kegiatan siswa.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="contact" id="kontak">
+        <h2 class="section-title">Hubungi Kami</h2>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+                <h3>Informasi Sekolah</h3>
+
+                <p>📍 Jl. warunggunung</p>
+                <p>📞 (021) 12345678</p>
+                <p>📧 info@smk mhi.sch.id</p>
+                <p>🕐 Senin - Jumat, 07.00 - 15.00</p>
+            </div>
+
+</body>
+</html>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ekstrakurikuler - SMK MHI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f8f5;
+            color: #333;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            background: #0b6b3a;
+            color: white;
+
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd54f;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 400px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(11, 107, 58, 0.88),
+                    rgba(11, 107, 58, 0.88)
+                ),
+                linear-gradient(
+                    135deg,
+                    #0b6b3a,
+                    #2e9d63
+                );
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+        }
+
+
+        /* ================= CONTAINER ================= */
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+
+            color: #0b6b3a;
+
+            font-size: 34px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 45px;
+
+            color: #666;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= EKSTRAKURIKULER ================= */
+
+        .ekskul-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .ekskul-card {
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+            transition: all 0.3s ease;
+
+            border-bottom:
+                5px solid #0b6b3a;
+        }
+
+
+        .ekskul-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* ICON */
+
+        .icon {
+            width: 90px;
+            height: 90px;
+
+            margin: 0 auto 20px;
+
+            background: #e7f5ed;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 45px;
+        }
+
+
+        .ekskul-card h3 {
+            color: #0b6b3a;
+
+            font-size: 22px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .ekskul-card p {
+            color: #666;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= JADWAL ================= */
+
+        .jadwal-section {
+            background: #eaf5ee;
+        }
+
+
+        .table-container {
+            overflow-x: auto;
+
+            background: white;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0,0,0,0.08);
+        }
+
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+        }
+
+
+        table th {
+            background: #0b6b3a;
+
+            color: white;
+
+            padding: 16px;
+        }
+
+
+        table td {
+            padding: 15px;
+
+            text-align: center;
+
+            border-bottom:
+                1px solid #ddd;
+        }
+
+
+        table tr:hover {
+            background: #f1f8f4;
+        }
+
+
+        /* ================= MANFAAT ================= */
+
+        .manfaat-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .manfaat-card {
+            background: white;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 15px
+                rgba(0,0,0,0.07);
+        }
+
+
+        .manfaat-card .icon {
+            width: 65px;
+            height: 65px;
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .manfaat-card h3 {
+            color: #0b6b3a;
+
+            margin-bottom: 10px;
+        }
+
+
+        .manfaat-card p {
+            color: #666;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= PENDAFTARAN ================= */
+
+        .daftar-section {
+            background: #0b6b3a;
+
+            color: white;
+
+            text-align: center;
+        }
+
+
+        .daftar-section h2 {
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .daftar-section p {
+            max-width: 650px;
+
+            margin: 0 auto 25px;
+
+            line-height: 1.7;
+        }
+
+
+        .btn {
+            display: inline-block;
+
+            background: #ffd54f;
+
+            color: #333;
+
+            padding: 13px 28px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .btn:hover {
+            background: #ffca28;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #064b29;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .ekskul-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .manfaat-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+            }
+
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+
+            .container {
+                width: 90%;
+            }
+
+
+            .ekskul-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .manfaat-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+        
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    Profil
+                </a>
+            </li>
+
+            <li>
+                <a href="visi dan misi.html">
+                    Visi & Misi
+                </a>
+            </li>
+
+            <li>
+                <a href="ekstrakulikuler.html">
+                    Ekstrakurikuler
+                </a>
+            </li>
+
+            <li>
+                <a href="kontak.html">
+                    Kontak
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div>
+
+            <h1>
+                Ekstrakurikuler SMK MHI
+            </h1>
+
+            <p>
+                Mengembangkan bakat, minat, kreativitas,
+                kepemimpinan, dan keterampilan siswa
+                melalui berbagai kegiatan positif.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= DAFTAR EKSKUL ================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Pilihan Ekstrakurikuler
+            </h2>
+
+            <p class="section-description">
+                SMK MHI menyediakan berbagai kegiatan
+                ekstrakurikuler yang dapat menjadi wadah
+                bagi siswa untuk mengembangkan potensi
+                dan keterampilan di luar kegiatan belajar
+                mengajar.
+            </p>
+
+
+            <div class="ekskul-grid">
+
+
+                <!-- PRAMUKA -->
+
+                <div class="ekskul-card">
+
+                    <div class="icon">
+                        🏕️
+                    </div>
+
+                    <h3>
+                        Pramuka
+                    </h3>
+
+                    <p>
+                        Melatih kedisiplinan, kemandirian,
+                        kerja sama, kepemimpinan, dan
+                        kepedulian terhadap lingkungan.
+                    </p>
+
+                </div>
+
+
+                <!-- PMR -->
+
+                <div class="ekskul-card">
+
+                    <div class="icon">
+                        🩹
+                    </div>
+
+                    <h3>
+                        PMR
+                    </h3>
+
+                    <p>
+                        Mengembangkan kepedulian sosial
+                        serta pengetahuan dasar mengenai
+                        pertolongan pertama dan kesehatan.
+                    </p>
+
+                </div>
+
+
+                <!-- FUTSAL -->
+
+                <div class="ekskul-card">
+
+                    <div class="icon">
+                        ⚽
+                    </div>
+
+                    <h3>
+                        Futsal
+                    </h3>
+
+                    <p>
+                        Meningkatkan kemampuan olahraga,
+                        kebugaran, sportivitas, dan kerja
+                        sama tim.
+                    </p>
+
+                </div>
+
+
+                <!-- VOLI -->
+
+                <div class="ekskul-card">
+
+                    <div class="icon">
+                        🏐
+                    </div>
+
+                    <h3>
+                        Bola Voli
+                    </h3>
+
+                    <p>
+                        Menyalurkan minat siswa dalam
+                        olahraga sekaligus membangun
+                        kekompakan dan sportivitas.
+                    </p>
+
+                </div>
+
+
+                <!-- PENCAK SILAT -->
+
+                <div class="ekskul-card">
+
+                    <div class="icon">
+                        🥋
+                    </div>
+
+                    <h3>
+                        Pencak Silat
+                    </h3>
+
+                    <p>
+                        Melatih bela diri, kedisiplinan,
+                        keberanian, konsentrasi, dan
+                        pengendalian diri.
+                    </p>
+
+                </div>
+
+
+                <!-- SENI -->
+
+                <div class="ekskul-card">
+
+                    <div class="icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Seni & Kreativitas
+                    </h3>
+
+                    <p>
+                        Menjadi wadah bagi siswa untuk
+                        mengembangkan kreativitas dalam
+                        bidang seni dan budaya.
+                    </p>
+
+                </div>
+
+
+                <!-- IT -->
+
+                <div class="ekskul-card">
+
+                    <div class="icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Teknologi & IT
+                    </h3>
+
+                    <p>
+                        Mengembangkan kemampuan siswa
+                        dalam teknologi, komputer,
+                        pemrograman, dan dunia digital.
+                    </p>
+
+                </div>
+
+
+                <!-- ROHIS -->
+
+                <div class="ekskul-card">
+
+                    <div class="icon">
+                        📖
+                    </div>
+
+                    <h3>
+                        Kerohanian
+                    </h3>
+
+                    <p>
+                        Membantu siswa mengembangkan
+                        karakter, nilai moral, dan kegiatan
+                        keagamaan di lingkungan sekolah.
+                    </p>
+
+                </div>
+
+
+                <!-- MUSIK -->
+
+                <div class="ekskul-card">
+
+                    <div class="icon">
+                        🎵
+                    </div>
+
+                    <h3>
+                        Musik
+                    </h3>
+
+                    <p>
+                        Mengembangkan bakat siswa dalam
+                        bidang musik, vokal, dan seni
+                        pertunjukan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= JADWAL ================= -->
+
+    <section class="section jadwal-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Jadwal Ekstrakurikuler
+            </h2>
+
+            <p class="section-description">
+                Jadwal berikut merupakan contoh dan dapat
+                disesuaikan dengan jadwal kegiatan SMK MHI.
+            </p>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>No</th>
+                            <th>Ekstrakurikuler</th>
+                            <th>Hari</th>
+                            <th>Waktu</th>
+                            <th>Tempat</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Pramuka</td>
+                            <td>Jumat</td>
+                            <td>14.00 - 16.00</td>
+                            <td>Lapangan</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>Futsal</td>
+                            <td>Sabtu</td>
+                            <td>08.00 - 10.00</td>
+                            <td>Lapangan</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Bola Voli</td>
+                            <td>Sabtu</td>
+                            <td>10.00 - 12.00</td>
+                            <td>Lapangan</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>PMR</td>
+                            <td>Rabu</td>
+                            <td>14.00 - 16.00</td>
+                            <td>Ruang PMR</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>Teknologi & IT</td>
+                            <td>Kamis</td>
+                            <td>14.00 - 16.00</td>
+                            <td>Lab Komputer</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>Seni & Kreativitas</td>
+                            <td>Selasa</td>
+                            <td>14.00 - 16.00</td>
+                            <td>Ruang Seni</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MANFAAT ================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Manfaat Mengikuti Ekstrakurikuler
+            </h2>
+
+
+            <div class="manfaat-grid">
+
+
+                <div class="manfaat-card">
+
+                    <div class="icon">
+                        🌟
+                    </div>
+
+                    <h3>
+                        Mengembangkan Bakat
+                    </h3>
+
+                    <p>
+                        Membantu siswa menemukan dan
+                        mengembangkan potensi yang dimiliki.
+                    </p>
+
+                </div>
+
+
+                <div class="manfaat-card">
+
+                    <div class="icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Kerja Sama
+                    </h3>
+
+                    <p>
+                        Melatih kemampuan bekerja sama
+                        dan berkomunikasi dengan orang lain.
+                    </p>
+
+                </div>
+
+
+                <div class="manfaat-card">
+
+                    <div class="icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Prestasi
+                    </h3>
+
+                    <p>
+                        Memberikan kesempatan kepada siswa
+                        untuk mengikuti berbagai perlombaan.
+                    </p>
+
+                </div>
+
+
+                <div class="manfaat-card">
+
+                    <div class="icon">
+                        💡
+                    </div>
+
+                    <h3>
+                        Kreativitas
+                    </h3>
+
+                    <p>
+                        Mendorong siswa menjadi lebih
+                        kreatif, aktif, dan inovatif.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PENDAFTARAN ================= -->
+
+    <section class="section daftar-section">
+
+        <div class="container">
+
+            <h2>
+                Ayo Bergabung!
+            </h2>
+
+            <p>
+                Pilih ekstrakurikuler sesuai dengan minat
+                dan bakatmu. Jadilah siswa SMK MHI yang
+                aktif, kreatif, dan berprestasi.
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 SMK MHI. Semua Hak Dilindungi.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
